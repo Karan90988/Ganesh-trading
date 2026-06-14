@@ -820,9 +820,11 @@
 
     /* ---- Wire up the static WhatsApp buttons ---- */
     const genericMsg = `Hello ${SHOP.name}! 🙏 I would like to place an order. Please share availability and prices.`;
-    [
-      "navWa", "heroOrder", "contactWa", "footWa", "waFloat"
-    ].forEach((id) => {
+    ["navWa", "heroOrder"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.href = "https://ganesh-online.vercel.app/";
+    });
+    ["contactWa", "footWa", "waFloat"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.href = waLink(genericMsg);
     });
